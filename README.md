@@ -23,6 +23,9 @@ Backend: Flask (REST API for predictions)
 Frontend: HTML, CSS, JavaScript (customer input form + results display)
 Deployment: Localhost / Cloud-ready (Heroku, AWS, or Azure)
 
+**Screenshot**
+<img width="437" height="428" alt="s" src="https://github.com/user-attachments/assets/c945dcd5-2748-48a8-9c67-aedf1183c0ec" />
+
 📂 Repository Structure
 ├── data/                 # Raw and processed datasets  
 ├── notebooks/            # Jupyter notebooks for EDA & model building  
