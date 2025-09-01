@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction</h1>
+        <form method="POST" class="form-card">
+            <div class="grid">
+                <!-- Numeric Inputs -->
+                <label>Senior Citizen (0/1)
+                    <input type="number" name="query1" min="0" max="1" required>
+                </label>
+                <label>Monthly Charges
+                    <input type="number" name="query2" step="0.01" required>
+                </label>
+                <label>Total Charges
+                    <input type="number" name="query3" step="0.01" required>
+                </label>
+                <label>Tenure (Months)
+                    <input type="number" name="query19" min="0" required>
+                </label>
+
+                <!-- Dropdown Inputs -->
+                <label>Gender
+                    <select name="query4" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </label>
+                <label>Partner
+                    <select name="query5" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </label>
+                <label>Dependents
+                    <select name="query6" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </label>
+                <label>Phone Service
+                    <select name="query7" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </label>
+                <label>Multiple Lines
+                    <select name="query8" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No phone service">No phone service</option>
+                    </select>
+                </label>
+                <label>Internet Service
+                    <select name="query9" required>
+                        <option value="DSL">DSL</option>
+                        <option value="Fiber optic">Fiber optic</option>
+                        <option value="No">No</option>
+                    </select>
+                </label>
+                <label>Online Security
+                    <select name="query10" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </label>
+                <label>Online Backup
+                    <select name="query11" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </label>
+                <label>Device Protection
+                    <select name="query12" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </label>
+                <label>Tech Support
+                    <select name="query13" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </label>
+                <label>Streaming TV
+                    <select name="query14" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </label>
+                <label>Streaming Movies
+                    <select name="query15" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="No internet service">No internet service</option>
+                    </select>
+                </label>
+                <label>Contract
+                    <select name="query16" required>
+                        <option value="Month-to-month">Month-to-month</option>
+                        <option value="One year">One year</option>
+                        <option value="Two year">Two year</option>
+                    </select>
+                </label>
+                <label>Paperless Billing
+                    <select name="query17" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </label>
+                <label>Payment Method
+                    <select name="query18" required>
+                        <option value="Electronic check">Electronic check</option>
+                        <option value="Mailed check">Mailed check</option>
+                        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                        <option value="Credit card (automatic)">Credit card (automatic)</option>
+                    </select>
+                </label>
+            </div>
+
+            <button type="submit" class="btn">Predict Churn</button>
+        </form>
+
+        {% if output1 %}
+            <div class="result-card">
+                <h2>{{ output1 }}</h2>
+                <p>{{ output2 }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
